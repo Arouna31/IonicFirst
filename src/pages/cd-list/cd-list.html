@@ -1,16 +1,20 @@
 <ion-header>
-  <ion-buttons start>
-    <button ion-button icon-only (click)="onToggleMenu()">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-buttons>
-  <ion-navbar>
-    <ion-title>CD</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+         <ion-buttons start>
+             <button ion-button icon-only (click)="onToggleMenu()">
+               <ion-icon name="menu"></ion-icon>
+             </button>
+           </ion-buttons>
+       <ion-title>CD</ion-title>
+     </ion-navbar>
+   </ion-header>
+   
+   
+   <ion-content padding>
+     <ion-list inset>
+       <button ion-item *ngFor="let cd of CdList; let i = index" (click)="onSelectedCd(i)">
+         {{ cd.title }}
+       </button> 
+     </ion-list>
+   </ion-content>
+   
