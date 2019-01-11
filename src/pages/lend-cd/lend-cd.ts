@@ -29,4 +29,9 @@ export class LendCdPage {
   onDismissModal() {
     this.viewCtrl.dismiss();
   }
+
+  onCdStatusChanged() {
+    this.objectsService.changeObjectStatus(this.cd);
+    console.log("statut changé");
+  }
 }

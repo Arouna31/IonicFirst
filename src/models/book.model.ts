@@ -1,5 +1,9 @@
 export class Book {
-  isLended: boolean;
+  isLended: boolean = false;
 
-  constructor(public title: string, public author: string) {}
+  constructor(
+    public title: string,
+    public author: string,
+    public picture: string
+  ) {}
 }

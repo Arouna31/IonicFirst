@@ -3,17 +3,43 @@ import { Cd } from "../models/cd.model";
 
 export class ObjectsService {
   books: Book[] = [
-    new Book("Etranger", "Albert Camus"),
-    new Book("Les Misérables", "Victor Hugo"),
-    new Book("How Javascript Works", "Douglas ClockFord"),
-    new Book("Javascript Good Parts", "Douglas ClockFord"),
-    new Book("Eloquent Javascript", "Marijn Haverbeke")
+    new Book("Etranger", "Albert Camus", "../assets/imgs/etranger.jpeg"),
+    new Book("Les Misérables", "Victor Hugo", "../assets/imgs/miserables.jpg"),
+    new Book(
+      "How Javascript Works",
+      "Douglas ClockFord",
+      "../assets/imgs/hjw.jpg"
+    ),
+    new Book(
+      "Javascript Good Parts",
+      "Douglas ClockFord",
+      "../assets/imgs/gp.jpeg"
+    ),
+    new Book(
+      "Eloquent Javascript",
+      "Marijn Haverbeke",
+      "../assets/imgs/eloquent.jpg"
+    )
   ];
   cd: Cd[] = [
-    new Cd("Mini World", "Musique", "Indila"),
-    new Cd(`L'amour d'Allah`, "Musique", "Silence Des Mosquees"),
-    new Cd(`Moana`, "Film", "	Ron Clements"),
-    new Cd(`Harry Potter`, "Film", "J. K. Rowling"),
-    new Cd(`Blanche Neige`, "Film", "	David Hand")
+    new Cd("Mini World", "Musique", "Indila", "../assets/imgs/mini.jpg"),
+    new Cd(
+      `L'amour d'Allah`,
+      "Musique",
+      "Silence Des Mosquees",
+      "../assets/imgs/silence.jpg"
+    ),
+    new Cd(`Moana`, "Film", "	Ron Clements", "../assets/imgs/moana.jpeg"),
+    new Cd(
+      `Harry Potter`,
+      "Film",
+      "J. K. Rowling",
+      "../assets/imgs/harry.jpeg"
+    ),
+    new Cd(`Blanche Neige`, "Film", "	David Hand", "../assets/imgs/blanche.jpg")
   ];
+
+  changeObjectStatus(object: any) {
+    object.isLended = !object.isLended;
+  }
 }

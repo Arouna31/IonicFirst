@@ -12,7 +12,11 @@
    
    <ion-content padding>
      <ion-list inset>
-       <button ion-item *ngFor="let cd of CdList; let i = index" (click)="onSelectedCd(i)">
+       <button 
+        ion-item 
+        *ngFor="let cd of CdList; let i = index" 
+        (click)="onSelectedCd(i)"
+        [ngStyle]="{'background-color': cd.isLended ? 'blue' : 'transparent'}">
          {{ cd.title }}
        </button> 
      </ion-list>

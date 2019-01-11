@@ -12,7 +12,12 @@
 
 <ion-content padding>
   <ion-list inset>
-    <button ion-item *ngFor="let book of booksList; let i = index" (click)="onSelectedBook(i)">
+    <button 
+      ion-item 
+      *ngFor="let book of booksList; let i = index" 
+      (click)="onSelectedBook(i)"
+      [ngStyle]="{'background-color': book.isLended ? 'blue' : 'transparent'}"
+      >
       {{ book.title }}
     </button> 
   </ion-list>

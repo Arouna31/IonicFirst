@@ -1,5 +1,10 @@
 export class Cd {
-  isLended: boolean;
+  isLended: boolean = false;
 
-  constructor(public title: string, public type: string, public author) {}
+  constructor(
+    public title: string,
+    public type: string,
+    public author,
+    public picture: string
+  ) {}
 }

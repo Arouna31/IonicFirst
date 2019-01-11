@@ -9,8 +9,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-card>
-    <img src="../../assets/imgs/Désespoire.png"/>
+  <ion-card [ngStyle]="{'background-color' : book.isLended ? 'rgb(149, 149, 216)' : 'transparent'}">
+    <img [src]="book.picture"/>
     <ion-card-content>
       <ion-card-title>
         {{ book.title }}
@@ -20,10 +20,20 @@
           <ion-grid>
             <ion-row>
               <ion-col>
-                <button ion-button full round>Prêter</button>
+                <button 
+                 ion-button
+                 full
+                 (click)="onBookStatusChanged()"
+                 [disabled]="book.isLended"
+                 round>Prêter</button>
               </ion-col>
               <ion-col>
-                <button ion-button full color="dark" round>Rendre</button>
+                <button 
+                (click)="onBookStatusChanged()"
+                 ion-button 
+                 full color="dark"
+                 [disabled]="!book.isLended" 
+                 round>Rendre</button>
               </ion-col>
             </ion-row>
           </ion-grid>       

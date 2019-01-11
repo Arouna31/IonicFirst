@@ -28,4 +28,9 @@ export class LendBookPage {
   onDismissModal() {
     this.viewCtrl.dismiss();
   }
+
+  onBookStatusChanged() {
+    this.objectsService.changeObjectStatus(this.book);
+    console.log("statut changé");
+  }
 }
